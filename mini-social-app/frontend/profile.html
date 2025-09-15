@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile | Mini Social</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #4267B2;
+            color: white;
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .profile-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #777;
+            margin-right: 20px;
+        }
+
+        .profile-info h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .profile-info p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background-color: #4267B2;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #e9ebee;
+            color: #333;
+        }
+
+        .posts-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .post {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .post:last-child {
+            border-bottom: none;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: #777;
+        }
+
+        .post-user {
+            font-weight: 600;
+        }
+
+        .post-time {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .post-content {
+            margin-bottom: 10px;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .post-action {
+            display: flex;
+            align-items: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .post-action i {
+            margin-right: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .stats {
+                justify-content: center;
+            }
+            
+            .action-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">MiniSocial</div>
+            <div class="nav-menu">
+                <a href="#">Home</a>
+                <a href="#">Notifications</a>
+                <a href="#">Messages</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="profile-info">
+                    <h1>John Doe</h1>
+                    <p>Photography enthusiast and travel blogger</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-value">128</div>
+                            <div class="stat-label">Posts</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">872</div>
+                            <div class="stat-label">Followers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">324</div>
+                            <div class="stat-label">Following</div>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn btn-primary">Follow</button>
+                        <button class="btn btn-secondary">Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="posts-section">
+            <h2 class="section-title">Recent Posts</h2>
+            
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <div class="post-user">John Doe</div>
+                        <div class="post-time">2 hours ago</div>
+                    </div>
+                </div>
+                <div class="post-content">
+                    Just finished hiking at the national park. The views were absolutely breathtaking! 🌲🏔️
+                </div>
+                <div class="post-actions">
+                    <div class="post-action">
+                        <i class="far fa-heart"></i> 42
+                    </div>
+                    <div class="post-action">
+                        <i class="far fa-comment"></i> 7
+                    </div>
+                    <div class="post-action">
+                        <i class="far fa-share-square"></i> Share
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <div class="post-user">John Doe</div>
+                        <div class="post-time">1 day ago</div>
+                    </div>
+                </div>
+                <div class="post-content">
+                    Trying out a new coffee recipe this morning. Vanilla and cinnamon make such a great combination! ☕
+                </div>
+                <div class="post-actions">
+                    <div class="post-action">
+                        <i class="far fa-heart"></i> 28
+                    </div>
+                    <div class="post-action">
+                        <i class="far fa-comment"></i> 3
+                    </div>
+                    <div class="post-action">
+                        <i class="far fa-share-square"></i> Share
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <div class="post-user">John Doe</div>
+                        <div class="post-time">3 days ago</div>
+                    </div>
+                </div>
+                <div class="post-content">
+                    Just finished reading an amazing book on productivity. Highly recommend "Atomic Habits" by James Clear!
+                </div>
+                <div class="post-actions">
+                    <div class="post-action">
+                        <i class="far fa-heart"></i> 65
+                    </div>
+                    <div class="post-action">
+                        <i class="far fa-comment"></i> 12
+                    </div>
+                    <div class="post-action">
+                        <i class="far fa-share-square"></i> Share
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Follow button functionality
+            const followBtn = document.querySelector('.btn-primary');
+            followBtn.addEventListener('click', function() {
+                if (this.textContent === 'Follow') {
+                    this.textContent = 'Following';
+                    this.style.backgroundColor = '#4CAF50';
+                } else {
+                    this.textContent = 'Follow';
+                    this.style.backgroundColor = '#4267B2';
+                }
+            });
+            
+            // Like buttons functionality
+            const likeButtons = document.querySelectorAll('.post-action:first-child');
+            likeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const heartIcon = this.querySelector('i');
+                    if (heartIcon.classList.contains('far')) {
+                        heartIcon.classList.remove('far');
+                        heartIcon.classList.add('fas');
+                        this.style.color = '#E0245E';
+                    } else {
+                        heartIcon.classList.remove('fas');
+                        heartIcon.classList.add('far');
+                        this.style.color = '#666';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
