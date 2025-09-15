@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 10px;
+}
+
+input, textarea, button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+#posts {
+  margin-top: 20px;
+}
+
+.post {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.post .author {
+  font-weight: bold;
+}
+
+.post .content {
+  margin: 10px 0;
+}
+
+.post .likes {
+  color: blue;
+  cursor: pointer;
+}
+
+.comment {
+  margin-left: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 5px;
+}
+
+.comment .author {
+  font-weight: bold;
+}
+
+.comment textarea {
+  width: 100%;
+  margin-top: 5px;
+}
